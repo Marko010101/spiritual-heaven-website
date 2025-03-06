@@ -1,19 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import { updateGuest } from "../_lib/actions.js";
+import { SubmitButton } from "./SubmitButton.js";
 
-export default function UpdateProfileForm({ children }) {
+export default function UpdateProfileForm({ children, guest }) {
   const [count, setCount] = useState();
-
-  // CHANGE
-  const countryFlag = "pt.jpg";
+  const { fullName, email, nationality, nationalID, countryFlag } = guest;
 
   return (
-    <form className="flex flex-col gap-6 bg-primary-900 px-12 py-8 text-lg">
+    <form action={updateGuest} className="flex flex-col gap-6 bg-primary-900 px-12 py-8 text-lg">
       <div className="space-y-2">
         <label>Full name</label>
         <input
           disabled
+          name="fullName"
+          defaultValue={fullName}
           className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
         />
       </div>
@@ -22,6 +24,8 @@ export default function UpdateProfileForm({ children }) {
         <label>Email address</label>
         <input
           disabled
+          name="email"
+          defaultValue={email}
           className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
         />
       </div>
@@ -36,13 +40,15 @@ export default function UpdateProfileForm({ children }) {
       {children}
       <div className="space-y-2">
         <label htmlFor="nationalID">National ID number</label>
-        <input name="nationalID" className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm" />
+        <input
+          name="nationalID"
+          defaultValue={nationalID}
+          className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm"
+        />
       </div>
 
       <div className="flex items-center justify-end gap-6">
-        <button className="bg-accent-500 px-8 py-4 font-semibold text-primary-800 transition-all hover:bg-accent-600 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
-          Update profile
-        </button>
+        <SubmitButton pendingLabel="Updating...">Update profile</SubmitButton>
       </div>
     </form>
   );
