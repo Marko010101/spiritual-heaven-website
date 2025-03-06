@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **Spiritual Heaven Website** 🌿🏨
 
-## Getting Started
+## **Overview**
 
-First, run the development server:
+Spiritual Heaven is a Next.js-based hotel reservation website with an admin panel for managing reservations and cabins. The website offers functionalities such as Google authentication, cabin listings with filtering, and a reservation system with an intuitive user experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **Features**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **User Side**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Google Authentication** – Users can sign in with their Google account.
+- **Cabins Page** – Displays a list of available cabins, which can be added from the admin panel.
+- **Filtering** – Users can filter cabins based on the number of guests.
+- **Cabin Details** – Each cabin has a dedicated page showing detailed information.
+- **Reservation System** –
+  - Users who are signed in via Google can book a cabin.
+  - **Date Picker** – Reservations are managed using `react-day-picker`, ensuring unavailable dates are disabled.
+- **Guest Page** –
+  - If not registered, users are prompted to sign up with Google.
+  - Once logged in, users have access to a side navigation menu with links to Home, Reservations, and Profile.
+- **Reservations Page** –
+  - Displays past and upcoming reservations.
+  - Users can **edit** or **delete** only upcoming reservations.
+  - Editing redirects users to a dedicated edit page, where data is revalidated via Next.js actions.
+  - Deletions use an **optimistic update** to instantly update the UI while the request is being processed.
+- **Guest Profile** –
+  - Displays the user's full name and email (fetched from Google authentication and non-editable).
+  - Users can edit their **nationality** and **national ID number**.
+  - When the nationality is changed, the respective flag is displayed using the [REST Countries API](https://restcountries.com).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### **Admin Side**
 
-## Learn More
+- Admins can **add, edit, and delete cabins**.
+- A separate **admin panel** (built with React.js) is used to manage bookings.
 
-To learn more about Next.js, take a look at the following resources:
+## **Tech Stack**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend:** Next.js, React, Tailwind CSS
+- **Authentication:** Firebase (Google Auth)
+- **Database:** Firebase Firestore
+- **API:** REST Countries API
+- **State Management:** React Context & React Query
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## **Live Demo**
 
-## Deploy on Vercel
+[Spiritual Heaven Website](https://spiritual-heaven.netlify.app/login)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## **Live Demo**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[admin panel](https://spiritual-heaven.netlify.app/)
+
+## **Getting Started**
+
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/spiritual-heaven.git
+   cd spiritual-heaven
+   ```
