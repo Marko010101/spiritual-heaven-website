@@ -14,7 +14,7 @@ export default async function Page() {
   return (
     <div className="grid grid-cols-5 items-center gap-x-24 gap-y-32 text-lg">
       <div className="col-span-3">
-        <h1 className="mb-10 text-4xl font-medium text-accent-400">Welcome to The Wild Oasis</h1>
+        <h1 className="mb-10 text-4xl font-medium text-accent-400">Welcome to Spiritual Heaven</h1>
 
         <div className="space-y-8">
           <p>
@@ -39,7 +39,7 @@ export default async function Page() {
       </div>
 
       <div className="relative col-span-2 aspect-square">
-        <Image src="/about-2.jpg" fill className="object-cover" alt="Family that manages The Wild Oasis" />
+        <Image src="/about-2.jpg" fill className="object-cover" alt="Family that manages Spiritual Heaven" />
       </div>
 
       <div className="col-span-3">
@@ -47,14 +47,14 @@ export default async function Page() {
 
         <div className="space-y-8">
           <p>
-            Since 1962, The Wild Oasis has been a cherished family-run retreat. Started by our grandparents, this haven
-            has been nurtured with love and care, passing down through our family as a testament to our dedication to
-            creating a warm, welcoming environment.
+            Since 1962, Spiritual Heaven has been a cherished family-run retreat. Started by our grandparents, this
+            haven has been nurtured with love and care, passing down through our family as a testament to our dedication
+            to creating a warm, welcoming environment.
           </p>
           <p>
-            Over the years, we&apos;ve maintained the essence of The Wild Oasis, blending the timeless beauty of the
+            Over the years, we&apos;ve maintained the essence of Spiritual Heaven, blending the timeless beauty of the
             mountains with the personal touch only a family business can offer. Here, you&apos;re not just a guest;
-            you&apos;re part of our extended family. So join us at The Wild Oasis soon, where tradition meets
+            you&apos;re part of our extended family. So join us at Spiritual Heaven soon, where tradition meets
             tranquility, and every visit is like coming home.
           </p>
 
